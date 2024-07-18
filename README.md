@@ -1,4 +1,4 @@
-# See, Say, and Segment: Teaching LMMs to Overcome False Premises
+# Visual Haystacks: Answering Harder Questions About Sets of Images
 
 This is an academic paper project page template.
 
