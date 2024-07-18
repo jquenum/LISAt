@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="SVisual Haystacks: Answering Harder Questions About Sets of Images">
+    <meta property="og:title" content="Visual Haystacks" />
+    <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+    <meta property="og:url" content="http://visual-haystacks.github.io" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
+    <meta property="og:image" content="/static/images/VHs_image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+    <meta name="twitter:title" content="Visual Haystacks: Answering Harder Questions About Sets of Images">
+    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X600-->
+    <meta name="twitter:image" content="static/images/VHs_image.webp">
+    <meta name="twitter:card" content="Visual Haystack Project Logo: A cartoon character photo sitting on top of a haystack of images.">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords"
+        content="Large Multimodal Models, Long-context Reasoning, VQA, Image Retrieval">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Visual Haystacks: Answering Harder Questions About Sets of Images</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon_io">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="static/images/favicon_io/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/fontawesome/js/fontawesome.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered is-vcentered">
+                    <div class="column "><img src="static/images/vhs_logo.png" height="187" width="187"></div>
+                    <div class="column has-text-centered is-four-fifths is-vcentered">
+                        <h1 class="title is-1 publication-title">Visual Haystacks: Answering Harder Questions About Sets of Images</h1>
+                    </div>
+                </div>
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                        <div class="column has-text-centered is-four-fifths">
+                            <div class="is-size-5 publication-authors">
+                                <!-- Paper authors -->
+                                <span class="author-block">
+                                    <a href="https://tsunghan-wu.github.io/" target="_blank">Tsung-Han
+                                        Wu</a>,</span>
+                                <span class="author-block">
+                                    <a href="https://scholar.google.com/citations?user=s0Fof5IAAAAJ" target="_blank">Giscard
+                                        Biamby</a>,</span>
+                                <span class="author-block">
+                                    <a href="https://people.eecs.berkeley.edu/~jquenum/" target="_blank">Jerome Quenum</a>,
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://ritwikgupta.me/" target="_blank">Ritwik Gupta</a>,
+                                </span><br>
+                                <span class="author-block">
+                                    <a href="https://people.eecs.berkeley.edu/~jegonzal/" target="_blank">Joseph E. Gonzalez</a>,
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://people.eecs.berkeley.edu/~trevor/" target="_blank">Trevor Darrell</a>
+                                </span>
+                                <span class="author-block">
+                                    <a href="https://dchan.cc/" target="_blank">David M. Chan</a>,
+                                </span>
+                            </div>
+
+                            <div class="is-size-5 publication-authors">
+                                <span class="author-block">UC Berkeley</span>
+                            </div>
+
+                            <div class="column has-text-centered">
+                                <div class="publication-links">
+
+                                    <span class="link-block">
+                                        <a target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="ai ai-arxiv"></i>
+                                            </span>
+                                            <span>arXiv</span>
+                                        </a>
+                                    </span>
+
+                                    <span class="link-block">
+                                        <a href="https://huggingface.co/datasets/tsunghanwu/visual_haystacks" target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon" style="vertical-align: middle; font-size: 20px;">🤗</span>
+                                            <span>VHs Dataset</span>
+                                        </a>
+                                    </span>
+
+                                    <span class="link-block">
+                                        <a target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fa-brands fa-github"></i>
+                                            </span>
+                                            <span>VHs Benchmark Toolkits</span>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Paper abstract -->
+    <section class="section hero ">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <h2 class="title is-4">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                        Recent advancements in Large Multimodal Models (LMMs) have made significant progress in the field of single-image visual question answering. However, these models face substantial challenges when tasked with queries that span extensive collections of images, similar to real-world scenarios like searching through large photo albums, finding specific information across the internet, or monitoring environmental changes through satellite imagery. This paper explores the task of Multi-Image Visual Question Answering (MIQA): given a large set of images and a natural language query, the task is to generate a relevant and grounded response. We propose a new public benchmark, dubbed "Visual Haystacks (VHs)," specifically designed to evaluate LMMs’ capabilities in visual retrieval and reasoning over sets of unrelated images, where we perform comprehensive evaluations demonstrating that even robust closed-source models struggle significantly. Towards addressing these shortcomings, we introduce MIRAGE (Multi-Image Retrieval Augmented Generation), a novel retrieval/QA framework tailored for LMMs that confronts the challenges of MIQA with marked efficiency and accuracy improvements over baseline methods. Our evaluation shows that MIRAGE surpasses closed-source GPT-4o models by up to 11% on the VHs benchmark and offers up to 3.4x improvements in efficiency over text-focused multi-stage approaches.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End paper abstract -->
+
+
+
+    <!-- SESAME -->
+    <section class="section ">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <h2 class="title is-4">Visual Haystacks (VHs): A Visual-centric Needle-In-A-Haystack Benchmark</h2>
+                </div>
+            </div>
+            <!-- <div id="results-carousel" class="carousel results-carousel"> -->
+                <div class="content has-text-justified">
+                    <p>Visual Haystacks (VHs) is a "visual-centric" Needle-In-A-Haystack (NIAH) benchmark specifically designed to evaluate the capabilities of Large Multimodal Models (LMMs) in visual retrieval and reasoning over sets of unrelated images. Unlike conventional NIAH challenges that center on text-related retrieval and understanding with limited anecdotal examples, VHs contains a much larger number of examples and focuses on "simple visual tasks", providing a more accurate reflection of LMMs' capabilities when dealing with extensive visual context. 
+                    </p>
+                </div>
+                <div class="item is-vcentered">
+                    <img src="static/images/figures/visual_haystack_fig1.png" alt="VHs dataset overview" />
+                </div>
+                <br>
+                <div class="content has-text-justified">
+                    <p>
+                        Specifically, the dataset is derived from the COCO dataset and includes two types of challenges: the single-needle challenge and the multi-needle challenge. Please checkout our github repo for more info!
+                    <ol>
+                        <li><b>Single-Needle Challenge</b>: Only a single needle image exists in the haystack of images. The question is framed as, "For the image with the anchor object, is there a target object?"
+                        </li>
+                        <li><b>Multi-Needle Challenge</b>: Two to five needle images exist in the haystack of images. The question is framed as either, "For all images with the anchor object, do all of them contain the target object?" or "For all images with the anchor object, do any of them contain the target object?"
+                        </li>
+                    </ol>
+                    </p>
+                </div>
+            <!-- </div> -->
+        </div>
+    </section>
+
+
+
+    <!-- DATASET -->
+    <section class="section hero ">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <h2 class="title is-4">Comprehensive Analyses/Interesting Findings</h2>
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li><b>Enhanced Evaluation for LMMs</b>: VHs reveals that existing open-source and proprietary LMMs struggle significantly with long-context visual input compared to long-context textual information. This highlights a critical gap in the current capabilities of LMMs. (Note: The experiment is done during April and May and we recently found that some proprietary models have improved the performance.)
+
+                            </li>
+                        </ul>
+                        <!-- <img class="img" src="static/images/figures/fig3_SSS.png"> -->
+                    </div>
+                    <div class="item is-vcentered">
+                        <img src="static/images/figures/result1.png" alt="MY ALT TEXT" width="80%" />
+                    </div>
+                    <br>
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li><b>Phenomena in Visual Domain</b>: We identify a severe "lost-in-the-middle" style phenomenon in the visual domain when there are more than ten. Future LMM solutions might need to consider this issue when training their models.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item is-vcentered">
+                        <img src="static/images/figures/niah_LMM.jpg" alt="MY ALT TEXT" width="100%" />
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <section class="section hero">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <h2 class="title is-4">Our Solution: MIRAGE - Multi-Image Retrieval Augmented Generation</h2>
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li><b>Model Architecture</b>: MIRAGE handles questions and images through several steps: encoding features with CLIP, compressing image features with our Q-Former, calculating relevance scores with a retriever, and feeding only relevant images to the LLM. During instruction finetuning, the model is supervised for the next token prediction and the relevance prediction task, utilizing Binary Cross Entropy loss between the ground truth {0, 1} and the predicted number.
+                            </li>
+                        </ul>
+                        <!-- <img class="img" src="static/images/figures/fig3_SSS.png"> -->
+                    </div>
+
+                    <div class="item is-vcentered">
+                        <img src="static/images/figures/model_arch_v3.png" alt="MY ALT TEXT" width="80%" />
+                    </div>
+
+                    <br>
+
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li><b>Multi-Image Instruction Tuning Dataset</b>: We construct an open-source multi-image instruction tuning dataset. We augment existing single-image LLaVA instruction tuning data into a multi-image fashion. Additionally, we include a mix of data from other multi-image sources including RetVQA, SlideVQA, and WebQA. 
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="item is-vcentered">
+                        <img src="static/images/figures/dataset.png" alt="MY ALT TEXT" width="70%" />
+                    </div>
+
+                    <br>
+
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li>
+                                <b>Exceptional VQA Performance</b>: The MIRAGE model excels in the multi-image VQA task, significantly outperforming competitors like GPT-4o, Gemini-v1.5, and the Large World Model (LWM). MIRAGE also maintains solid performance on single-image tasks, showcasing its versatile reasoning capabilities.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item is-vcentered">
+                        <img src="static/images/figures/result_multi_image.png" alt="MY ALT TEXT" width="80%" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Paper poster -->
+    <!-- <section class="hero is-small is-light">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title">Poster</h2>
+
+                <iframe src="static/pdfs/sample.pdf" width="100%" height="550">
+                </iframe>
+
+            </div>
+        </div>
+    </section> -->
+    <!--End paper poster -->
+
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{wu2024visual,
+  title={Visual Haystacks: Answering Harder Questions About Sets of Images},
+  author={Wu, Tsung-Han and Biamby, Giscard and and Quenum, Jerome and Gupta, Ritwik and Gonzalez, Joseph E and Darrell, Trevor and Chan, David M},
+  journal={arXiv preprint arXiv:xxxx.xxxxx},
+  year={2024}
+}</code></pre>
+        </div>
+    </section>
+    <!--End BibTex citation -->
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This page was built using the <a
+                                href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                            You are free to borrow the of this website, we just ask that you link back to this page in
+                            the footer. <br> This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
