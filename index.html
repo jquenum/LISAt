@@ -58,7 +58,7 @@
                 <div class="columns is-centered is-vcentered">
                     <div class="column "><img src="static/images/vhs_logo.png" height="187" width="187"></div>
                     <div class="column has-text-centered is-four-fifths is-vcentered">
-                        <h1 class="title is-1 publication-title">Visual Haystacks: Answering Harder Questions About Sets of Images</h1>
+                        <h1 class="title is-1 publication-title">Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark</h1>
                     </div>
                 </div>
                 <div class="container is-max-desktop">
@@ -150,7 +150,7 @@
                     <h2 class="title is-4">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                        Recent advancements in Large Multimodal Models (LMMs) have made significant progress in the field of single-image visual question answering. However, these models face substantial challenges when tasked with queries that span extensive collections of images, similar to real-world scenarios like searching through large photo albums, finding specific information across the internet, or monitoring environmental changes through satellite imagery. This paper explores the task of Multi-Image Visual Question Answering (MIQA): given a large set of images and a natural language query, the task is to generate a relevant and grounded response. We propose a new public benchmark, dubbed "Visual Haystacks (VHs)," specifically designed to evaluate LMMs’ capabilities in visual retrieval and reasoning over sets of unrelated images, where we perform comprehensive evaluations demonstrating that even robust closed-source models struggle significantly. Towards addressing these shortcomings, we introduce MIRAGE (Multi-Image Retrieval Augmented Generation), a novel retrieval/QA framework tailored for LMMs that confronts the challenges of MIQA with marked efficiency and accuracy improvements over baseline methods. Our evaluation shows that MIRAGE surpasses closed-source GPT-4o models by up to 11% on the VHs benchmark and offers up to 3.4x improvements in efficiency over text-focused multi-stage approaches.
+                        Large Multimodal Models (LMMs) have made significant strides in visual question-answering for single images. Recent advancements like long-context LMMs have allowed them to ingest larger, or even multiple, images. <b>However, the ability to process a large number of visual tokens does not guarantee effective retrieval and reasoning for multi-image question answering (MIQA)</b>, especially in real-world applications like photo album searches or satellite imagery analysis. In this work, we first assess the limitations of current benchmarks for long-context LMMs. We address these limitations by introducing a new vision-centric, long-context benchmark, "Visual Haystacks (VHs)". We comprehensively evaluate both open-source and proprietary models on VHs, and demonstrate that these models struggle when reasoning across potentially unrelated images, perform poorly on cross-image reasoning, as well as exhibit biases based on the placement of key information within the context window. Towards a solution, we introduce MIRAGE (Multi-Image Retrieval Augmented Generation), an open-source, lightweight visual-RAG framework that processes up to 10k images on a single 40G A100 GPU -- far surpassing the 1k-image limit of contemporary models. MIRAGE demonstrates up to 13% performance improvement over existing open-source LMMs on VHs, sets a new state-of-the-art on the RetVQA multi-image QA benchmark, and achieves competitive performance on single-image QA with state-of-the-art LMMs.
                         </p>
                     </div>
                 </div>
@@ -166,25 +166,25 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-full">
-                    <h2 class="title is-4">Visual Haystacks (VHs): A Visual-centric Needle-In-A-Haystack Benchmark</h2>
+                    <h2 class="title is-4">Visual Haystacks (VHs): A Vision-centric Needle-In-A-Haystack Benchmark</h2>
                 </div>
             </div>
             <!-- <div id="results-carousel" class="carousel results-carousel"> -->
                 <div class="content has-text-justified">
-                    <p>Visual Haystacks (VHs) is a "visual-centric" Needle-In-A-Haystack (NIAH) benchmark specifically designed to evaluate the capabilities of Large Multimodal Models (LMMs) in visual retrieval and reasoning over sets of unrelated images. Unlike conventional NIAH challenges that center on text-related retrieval and understanding with limited anecdotal examples, VHs contains a much larger number of examples and focuses on "simple visual tasks", providing a more accurate reflection of LMMs' capabilities when dealing with extensive visual context. 
+                    <p>Visual Haystacks (VHs) is a "vision-centric" Needle-In-A-Haystack (NIAH) benchmark specifically designed to evaluate the capabilities of Large Multimodal Models (LMMs) in visual retrieval and reasoning over sets of unrelated images. Unlike conventional NIAH challenges that center on artificial, text-related retrieval and understanding with limited anecdotal examples, VHs contains a much larger number of examples and focuses on "simple visual tasks", providing a more accurate reflection of LMMs' capabilities when dealing with extensive visual context. 
                     </p>
                 </div>
                 <div class="item is-vcentered">
-                    <img src="static/images/figures/visual_haystack_fig1.png" alt="VHs dataset overview" />
+                    <img src="static/images/figures/fig1.png" alt="VHs dataset overview" />
                 </div>
                 <br>
                 <div class="content has-text-justified">
                     <p>
-                        Specifically, the dataset is derived from the COCO dataset and includes two types of challenges: the single-needle challenge and the multi-needle challenge. Please checkout our github repo for more info!
+                        The dataset is derived from the in-domain COCO dataset and includes straightforward questions, focusing exclusively on long-context visual retrieval and reasoning capabilities. It features two types of challenges: the Single-Needle Challenge and the Multi-Needle Challenge. For more information, please visit our <a href="https://github.com/visual-haystacks/vhs_benchmark">GitHub repository</a>.
                     <ol>
                         <li><b>Single-Needle Challenge</b>: Only a single needle image exists in the haystack of images. The question is framed as, "For the image with the anchor object, is there a target object?"
                         </li>
-                        <li><b>Multi-Needle Challenge</b>: Two to five needle images exist in the haystack of images. The question is framed as either, "For all images with the anchor object, do all of them contain the target object?" or "For all images with the anchor object, do any of them contain the target object?"
+                        <li><b>Multi-Needle Challenge</b>: Two or three needle images exist in the haystack of images. The question is framed as either, "For all images with the anchor object, do all of them contain the target object?" or "For all images with the anchor object, do any of them contain the target object?"
                         </li>
                     </ol>
                     </p>
@@ -193,37 +193,52 @@
         </div>
     </section>
 
-
-
-    <!-- DATASET -->
-    <section class="section hero ">
+    <section class="section hero">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-full">
                     <h2 class="title is-4">Comprehensive Analyses/Interesting Findings</h2>
                     <div class="content has-text-justified">
                         <ul>
-                            <li><b>Enhanced Evaluation for LMMs</b>: VHs reveals that existing open-source and proprietary LMMs struggle significantly with long-context visual input compared to long-context textual information. This highlights a critical gap in the current capabilities of LMMs. (Note: The experiment is done during April and May and we recently found that some proprietary models have improved the performance.)
-
+                            <li>
+                                <b>Context Limitations</b>: Current LMMs cannot process more than 100 images due to API rejections (payload exceeding limits), context length overflows, or memory constraints on 4 A100 GPUs.
                             </li>
                         </ul>
-                        <!-- <img class="img" src="static/images/figures/fig3_SSS.png"> -->
                     </div>
-                    <div class="item is-vcentered">
-                        <img src="static/images/figures/result1.png" alt="MY ALT TEXT" width="80%" />
-                    </div>
-                    <br>
                     <div class="content has-text-justified">
                         <ul>
-                            <li><b>Phenomena in Visual Domain</b>: We identify a severe <a href="https://arxiv.org/abs/2307.03172">"loss in the middle"</a> style phenomenon in the visual domain when there are more than ten. Future LMM solutions might need to consider this issue when training their models.
+                            <li>
+                                <b>Susceptibility to Visual Distractors</b>: While LMMs can perform nearly as well as specialized detectors on single-image tasks, their effectiveness decreases significantly as the number of images increases.
                             </li>
                         </ul>
                     </div>
                     <div class="item is-vcentered">
-                        <img src="static/images/figures/niah_LMM.jpg" alt="MY ALT TEXT" width="100%" />
+                        <img src="static/images/figures/fig2.png" alt="Effectiveness of LMMs with increasing number of images" width="90%">
+                    </div>
+
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li>
+                                <b>Challenges in Cross-Image Reasoning</b>: LMMs experience substantial performance declines when required to integrate information across multiple key images; reintroducing noisy images exacerbates this decline even further.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item is-vcentered">
+                        <img src="static/images/figures/fig3.png" alt="Challenges in Cross-Image Reasoning" width="90%">
+                    </div>
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li>
+                                <b>Positional Biases</b>: LMMs exhibit various positional biases—information placed at different positions within the context window yields different results. For instance, GPT-4 exhibits a <a href="https://arxiv.org/abs/2307.03172">"lost-in-the-middle"</a> phenomenon in the visual domain, Gemini 1.5 Pro shows a preference for images at the beginning, and open-source models often favor the last image when given a small set.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item is-vcentered">
+                        <img src="static/images/figures/fig4.png" alt="Positional Biases in LMMs" width="92%">
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
 
@@ -233,41 +248,40 @@
                 <div class="column is-full">
                     <h2 class="title is-4">Our Solution: MIRAGE - Multi-Image Retrieval Augmented Generation</h2>
                     <div class="content has-text-justified">
+                        <p>Through extensive experiments above, we demonstrated that existing LMMs struggle with inputs exceeding 100 images due to API limitations, context overflow, or hardware constraints on 4 A100 GPUs. Also, these models often face issues such as visual distractions, cross-image reasoning difficulties, and positional biases. To overcome these challenges, we developed MIRAGE (8.3B), a pioneering, open-source <b>visual-RAG baseline model based on LMMs capable of handling tens of thousands of images</b>.
+                        </p>
                         <ul>
                             <li><b>Model Architecture</b>: MIRAGE handles questions and images through several steps: encoding features with CLIP, compressing image features with our Q-Former, calculating relevance scores with a retriever, and feeding only relevant images to the LLM. During instruction finetuning, the model is supervised for the next token prediction and the relevance prediction task, utilizing Binary Cross Entropy loss between the ground truth {0, 1} and the predicted number.
                             </li>
-                        </ul>
-                        <!-- <img class="img" src="static/images/figures/fig3_SSS.png"> -->
-                    </div>
-
-                    <div class="item is-vcentered">
-                        <img src="static/images/figures/model_arch_v3.png" alt="MY ALT TEXT" width="80%" />
-                    </div>
-
-                    <br>
-
-                    <div class="content has-text-justified">
-                        <ul>
+                            <br>
                             <li><b>Multi-Image Instruction Tuning Dataset</b>: We construct an open-source multi-image instruction tuning dataset. We augment existing single-image LLaVA instruction tuning data into a multi-image fashion. Additionally, we include a mix of data from other multi-image sources including RetVQA, SlideVQA, and WebQA. 
                             </li>
                         </ul>
                     </div>
 
                     <div class="item is-vcentered">
-                        <img src="static/images/figures/dataset.png" alt="MY ALT TEXT" width="70%" />
+                        <img src="static/images/figures/MIRAGE.png" alt="MY ALT TEXT" width="90%" />
                     </div>
-
-                    <br>
-
                     <div class="content has-text-justified">
                         <ul>
                             <li>
-                                <b>Exceptional VQA Performance</b>: The MIRAGE model excels in the multi-image VQA task, significantly outperforming competitors like GPT-4o, Gemini-v1.5, and the Large World Model (LWM). MIRAGE also maintains solid performance on single-image tasks, showcasing its versatile reasoning capabilities.
+                                <b>Exceptional VHs Performance</b>: Our MIRAGE model stands out in the VHs challenges. It is the only solution capable of scaling to 10,000 input images, demonstrating up to a 13% performance improvement over existing open-source alternatives and leading in most cases. Additionally, it surpasses GPT-4 and Gemini 1.5 Pro in the single-needle challenge with more than 50 images. However, its suboptimal performance in the multi-needle challenge highlights significant areas for improvement.
                             </li>
                         </ul>
                     </div>
                     <div class="item is-vcentered">
-                        <img src="static/images/figures/result_multi_image.png" alt="MY ALT TEXT" width="80%" />
+                        <img src="static/images/figures/result_vhs.png" alt="MY ALT TEXT" width="90%" />
+                    </div>
+
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li>
+                                <b>Reasonable VQA Performance</b>: The MIRAGE model excels in the multi-image VQA task, significantly outperforming competitors like GPT-4o, Gemini-v1.5, and the Large World Model (LWM). MIRAGE also maintains solid performance on single-image tasks, showcasing its versatile reasoning capabilities.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item is-vcentered">
+                        <img src="static/images/figures/result_vqa.png" alt="MY ALT TEXT" width="80%" />
                     </div>
                 </div>
             </div>
@@ -296,7 +310,7 @@
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
             <pre><code>@article{wu2024visual,
-  title={Visual Haystacks: Answering Harder Questions About Sets of Images},
+  title={Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark},
   author={Wu, Tsung-Han and Biamby, Giscard and and Quenum, Jerome and Gupta, Ritwik and Gonzalez, Joseph E and Darrell, Trevor and Chan, David M},
   journal={arXiv preprint arXiv:2407.13766},
   year={2024}
