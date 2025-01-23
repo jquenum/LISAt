@@ -90,7 +90,9 @@
                             </div>
 
                             <div class="is-size-5 publication-authors">
-                                <span class="author-block">UC Berkeley</span>
+                                <span class="author-block">UC Berkeley<br>
+                                <span class="author-block" style="font-weight: bold;">ICLR 2025</span><br>
+                                <span class="author-block" style="font-weight: bold;">BayLearn 2024 (Oral)</span></span>
                             </div>
 
                             <div class="column has-text-centered">
@@ -110,7 +112,17 @@
                                         <a href="https://bair.berkeley.edu/blog/2024/07/20/visual-haystacks/" target="_blank"
                                             class="external-link button is-normal is-rounded is-dark">
                                             <span class="icon" style="vertical-align: middle; font-size: 20px;">📝</span>
-                                            <span>Blog Post</span>
+                                            <span>Blog</span>
+                                        </a>
+                                    </span>
+
+                                    <span class="link-block">
+                                        <a href="https://www.youtube.com/watch?v=PZ7H9vNZZag" target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fa-brands fa-youtube"></i>
+                                            </span>
+                                            <span>Youtube</span>
                                         </a>
                                     </span>
 
@@ -120,7 +132,7 @@
                                             <span class="icon">
                                                 <i class="fa-brands fa-github"></i>
                                             </span>
-                                            <span>VHs Dataset/Toolkit</span>
+                                            <span>VHs Dataset</span>
                                         </a>
                                     </span>
 
@@ -148,12 +160,21 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-full">
+
+                    <!-- YouTube Video Link -->
+<!--                     <h2 class="title is-4">Video Introduction</h2>
+                    <div class="content has-text-justified">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/PZ7H9vNZZag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div> -->
                     <h2 class="title is-4">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
                         Large Multimodal Models (LMMs) have made significant strides in visual question-answering for single images. Recent advancements like long-context LMMs have allowed them to ingest larger, or even multiple, images. <b>However, the ability to process a large number of visual tokens does not guarantee effective retrieval and reasoning for multi-image question answering (MIQA)</b>, especially in real-world applications like photo album searches or satellite imagery analysis. In this work, we first assess the limitations of current benchmarks for long-context LMMs. We address these limitations by introducing a new vision-centric, long-context benchmark, "Visual Haystacks (VHs)". We comprehensively evaluate both open-source and proprietary models on VHs, and demonstrate that these models struggle when reasoning across potentially unrelated images, perform poorly on cross-image reasoning, as well as exhibit biases based on the placement of key information within the context window. Towards a solution, we introduce MIRAGE (Multi-Image Retrieval Augmented Generation), an open-source, lightweight visual-RAG framework that processes up to 10k images on a single 40G A100 GPU -- far surpassing the 1k-image limit of contemporary models. MIRAGE demonstrates up to 13% performance improvement over existing open-source LMMs on VHs, sets a new state-of-the-art on the RetVQA multi-image QA benchmark, and achieves competitive performance on single-image QA with state-of-the-art LMMs.
                         </p>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -313,8 +334,9 @@
             <pre><code>@article{wu2024visual,
   title={Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark},
   author={Wu, Tsung-Han and Biamby, Giscard and and Quenum, Jerome and Gupta, Ritwik and Gonzalez, Joseph E and Darrell, Trevor and Chan, David M},
-  journal={arXiv preprint arXiv:2407.13766},
-  year={2024}
+  journal={International Conference on Learning Representations},
+  year={2025},
+  url={https://arxiv.org/abs/2407.13766}
 }</code></pre>
         </div>
     </section>
