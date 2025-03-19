@@ -2,31 +2,32 @@
 <html>
 
 <head>
+    <script src="static/css/carousel.js"></script>
     <meta charset="utf-8">
     <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
     <!-- Replace the content tag with appropriate information -->
-    <meta name="description" content="Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark">
-    <meta property="og:title" content="Visual Haystacks" />
-    <meta property="og:description" content="Large Multimodal Models (LMMs) have made significant strides in visual question-answering for single images. Recent advancements like long-context LMMs have allowed them to ingest larger, or even multiple, images. However, the ability to process a large number of visual tokens does not guarantee effective retrieval and reasoning for multi-image question answering (MIQA), especially in real-world applications like photo album searches or satellite imagery analysis. In this work, we first assess the limitations of current benchmarks for long-context LMMs. We address these limitations by introducing a new vision-centric, long-context benchmark, Visual Haystacks (VHs). We comprehensively evaluate both open-source and proprietary models on VHs, and demonstrate that these models struggle when reasoning across potentially unrelated images, perform poorly on cross-image reasoning, as well as exhibit biases based on the placement of key information within the context window. Towards a solution, we introduce MIRAGE (Multi-Image Retrieval Augmented Generation), an open-source, lightweight visual-RAG framework that processes up to 10k images on a single 40G A100 GPU -- far surpassing the 1k-image limit of contemporary models. MIRAGE demonstrates up to 13% performance improvement over existing open-source LMMs on VHs, sets a new state-of-the-art on the RetVQA multi-image QA benchmark, and achieves competitive performance on single-image QA with state-of-the-art LMMs." />
-    <meta property="og:url" content="http://visual-haystacks.github.io" />
+    <meta name="description" content="LISAt: Language-Instructed Segmentation Assistant for Satellite Imagery">
+    <meta property="og:title" content="LISAt" />
+    <meta property="og:description" content="Segmentation models can recognize a pre-defined set of objects in images. However, segmentation models that can “reason” over complex user queries that implicitly refer to multiple objects of interest are still in their infancy. Recent advances in “reasoning segmentation”—generating segmentation masks from complex, implicit query text—show that vision-language models can reason across an open domain of objects and produce reasonable segmentation outputs. However, our experiments show that such models struggle when operating on complicated remote-sensing images. In this work, we introduce LISAT, a vision-language model (VLM) designed to describe complex remote-sensing images, answer questions about those images, and also identify and segment objects within the scenes. We trained LISAT on a new curated geospatial reasoning-segmentation dataset, GRES, comprising 27,615 annotations across 9,205 images, and a multi-modal geospatial pre-training dataset, PreGRES, containing >1M QA pairs. LISAT outperforms existing geospatial foundation models such as RS-GPT4V by over 10.04% (BLEU-4) on remote-sensing visual description tasks and outperforms state-of-the-art open-domain models on remote-sensing reasoning segmentation tasks by 143.36% (gIoU). Our model, datasets, and code are available at <https://lisat.github.io>." />
+    <meta property="og:url" content="http://lisat.github.io" />
     <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X630-->
-    <meta property="og:image" content="/static/images/VHs_logo.png" />
-    <meta property="og:image:width" content="1200" />
+    <meta property="og:image" content="/static/images/LISAt_logo.png" />
+    <meta property="og:image:width" content="630" />
     <meta property="og:image:height" content="630" />
 
 
-    <meta name="twitter:title" content="Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark">
-    <meta name="twitter:description" content="Large Multimodal Models (LMMs) have made significant strides in visual question-answering for single images. Recent advancements like long-context LMMs have allowed them to ingest larger, or even multiple, images. However, the ability to process a large number of visual tokens does not guarantee effective retrieval and reasoning for multi-image question answering (MIQA), especially in real-world applications like photo album searches or satellite imagery analysis. In this work, we first assess the limitations of current benchmarks for long-context LMMs. We address these limitations by introducing a new vision-centric, long-context benchmark, Visual Haystacks (VHs). We comprehensively evaluate both open-source and proprietary models on VHs, and demonstrate that these models struggle when reasoning across potentially unrelated images, perform poorly on cross-image reasoning, as well as exhibit biases based on the placement of key information within the context window. Towards a solution, we introduce MIRAGE (Multi-Image Retrieval Augmented Generation), an open-source, lightweight visual-RAG framework that processes up to 10k images on a single 40G A100 GPU -- far surpassing the 1k-image limit of contemporary models. MIRAGE demonstrates up to 13% performance improvement over existing open-source LMMs on VHs, sets a new state-of-the-art on the RetVQA multi-image QA benchmark, and achieves competitive performance on single-image QA with state-of-the-art LMMs." />
+    <meta name="twitter:title" content="LISAt: Language-Instructed Segmentation Assistant for Satellite Imagery">
+    <meta name="twitter:description" content="Segmentation models can recognize a pre-defined set of objects in images. However, segmentation models that can “reason” over complex user queries that implicitly refer to multiple objects of interest are still in their infancy. Recent advances in “reasoning segmentation”—generating segmentation masks from complex, implicit query text—show that vision-language models can reason across an open domain of objects and produce reasonable segmentation outputs. However, our experiments show that such models struggle when operating on complicated remote-sensing images. In this work, we introduce LISAT, a vision-language model (VLM) designed to describe complex remote-sensing images, answer questions about those images, and also identify and segment objects within the scenes. We trained LISAT on a new curated geospatial reasoning-segmentation dataset, GRES, comprising 27,615 annotations across 9,205 images, and a multi-modal geospatial pre-training dataset, PreGRES, containing >1M QA pairs. LISAT outperforms existing geospatial foundation models such as RS-GPT4V by over 10.04% (BLEU-4) on remote-sensing visual description tasks and outperforms state-of-the-art open-domain models on remote-sensing reasoning segmentation tasks by 143.36% (gIoU). Our model, datasets, and code are available at <https://lisat.github.io>." />
     <!-- Path to banner image, should be in the path listed below. Optimal dimensions are 1200X600-->
-    <meta name="twitter:image" content="static/images/VHs_logo.png">
-    <meta name="twitter:card" content="Visual Haystack Project Logo: A cartoon character photo sitting on top of a haystack of images.">
+    <meta name="twitter:image" content="static/images/LISAt_logo.png">
+    <meta name="twitter:card" content="LISAt Project Logo: A cartoon character photo of a satellite holding a a geospatial image.">
     <!-- Keywords for your paper to be indexed by-->
     <meta name="keywords"
-        content="Large Multimodal Models, Long-context Reasoning, VQA, Image Retrieval">
+        content="Geospatial Artificial Intelligence, Multi-Modal Artificial Intelligence, Reasoning Segmentation with Satellite Images">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark</title>
+    <title>LISAt: Language-Instructed Segmentation Assistant for Satellite Imagery</title>
     <link rel="icon" type="image/x-icon" href="static/images/favicon_io/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon_io">
     <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon_io/favicon-32x32.png">
@@ -56,9 +57,9 @@
         <div class="hero-body">
             <div class="container is-max-desktop">
                 <div class="columns is-centered is-vcentered">
-                    <div class="column "><img src="static/images/vhs_logo.png" height="187" width="187"></div>
+                    <!-- <div class="column "><img src="static/images/LISAt_logo.png" height="187" width="187"></div> -->
                     <div class="column has-text-centered is-four-fifths is-vcentered">
-                        <h1 class="title is-1 publication-title">Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark</h1>
+                        <h1 class="title is-1 publication-title">LISAt: Language-Instructed Segmentation Assistant for Satellite Imagery</h1>
                     </div>
                 </div>
                 <div class="container is-max-desktop">
@@ -66,24 +67,29 @@
                         <div class="column has-text-centered is-four-fifths">
                             <div class="is-size-5 publication-authors">
                                 <!-- Paper authors -->
+
                                 <span class="author-block">
-                                    <a href="https://tsunghan-wu.github.io/" target="_blank">Tsung-Han
-                                        Wu</a>,</span>
-                                <span class="author-block">
-                                    <a href="https://scholar.google.com/citations?user=s0Fof5IAAAAJ" target="_blank">Giscard
-                                        Biamby</a>,</span>
-                                <span class="author-block">
-                                    <a href="https://people.eecs.berkeley.edu/~jquenum/" target="_blank">Jerome Quenum</a>,
+                                    <a href="https://people.eecs.berkeley.edu/~jquenum/" target="_blank">Jerome Quenum *</a>,
                                 </span>
+
+                                <span class="author-block">
+                                    <a href="https://wen-hanhsieh.github.io/personal_website/" target="_blank">Wen-Han Hsieh *</a>,
+                                </span>
+
+                                <span class="author-block">
+                                    <a href="https://tsunghan-wu.github.io/" target="_blank">Tsung-Han Wu</a>,
+                                </span>
+
                                 <span class="author-block">
                                     <a href="https://ritwikgupta.me/" target="_blank">Ritwik Gupta</a>,
-                                </span><br>
-                                <span class="author-block">
-                                    <a href="https://people.eecs.berkeley.edu/~jegonzal/" target="_blank">Joseph E. Gonzalez</a>,
                                 </span>
+
+                                <br>
+
                                 <span class="author-block">
                                     <a href="https://people.eecs.berkeley.edu/~trevor/" target="_blank">Trevor Darrell</a>,
                                 </span>
+
                                 <span class="author-block">
                                     <a href="https://dchan.cc/" target="_blank">David M. Chan</a>
                                 </span>
@@ -91,15 +97,20 @@
 
                             <div class="is-size-5 publication-authors">
                                 <span class="author-block">UC Berkeley<br>
-                                <span class="author-block" style="font-weight: bold;">ICLR 2025</span><br>
-                                <span class="author-block" style="font-weight: bold;">BayLearn 2024 (Oral)</span></span>
+                                <span class="author-block" style="font-weight: bold;">ICML 2025</span><br>
+                                <!-- <span class="author-block" style="font-weight: bold;">BayLearn 2024 (Oral)</span></span> -->
+                            </div>
+
+                            <br>
+                            <div class="gif-container">
+                                <img src="static/images/example_0.gif" alt="Example GIF">
                             </div>
 
                             <div class="column has-text-centered">
                                 <div class="publication-links">
 
                                     <span class="link-block">
-                                        <a href="https://arxiv.org/abs/2407.13766" target="_blank"
+                                        <a href="#" target="_blank"
                                             class="external-link button is-normal is-rounded is-dark">
                                             <span class="icon">
                                                 <i class="ai ai-arxiv"></i>
@@ -108,15 +119,15 @@
                                         </a>
                                     </span>
 
-                                    <span class="link-block">
+                                    <!-- <span class="link-block">
                                         <a href="https://bair.berkeley.edu/blog/2024/07/20/visual-haystacks/" target="_blank"
                                             class="external-link button is-normal is-rounded is-dark">
                                             <span class="icon" style="vertical-align: middle; font-size: 20px;">📝</span>
                                             <span>Blog</span>
                                         </a>
-                                    </span>
+                                    </span> -->
 
-                                    <span class="link-block">
+                                    <!-- <span class="link-block">
                                         <a href="https://www.youtube.com/watch?v=PZ7H9vNZZag" target="_blank"
                                             class="external-link button is-normal is-rounded is-dark">
                                             <span class="icon">
@@ -124,27 +135,39 @@
                                             </span>
                                             <span>Youtube</span>
                                         </a>
-                                    </span>
+                                    </span> -->
 
                                     <span class="link-block">
-                                        <a href="https://github.com/visual-haystacks/vhs_benchmark" target="_blank"
+                                        <a href="https://huggingface.co/datasets/jquenum/GRES/blob/main/README.md" target="_blank"
                                             class="external-link button is-normal is-rounded is-dark">
                                             <span class="icon">
-                                                <i class="fa-brands fa-github"></i>
+                                                <i class="fa-regular fa-face-smiling-hands"></i>
                                             </span>
-                                            <span>VHs Dataset</span>
+                                            <span>GRES Dataset HF</span>
                                         </a>
                                     </span>
 
                                     <span class="link-block">
-                                        <a href="https://github.com/visual-haystacks/mirage" target="_blank"
+                                        <a href="https://github.com/Wen-HanHsieh/LISAT" target="_blank"
                                             class="external-link button is-normal is-rounded is-dark">
                                             <span class="icon">
                                                 <i class="fa-brands fa-github"></i>
                                             </span>
-                                            <span>MIRAGE's Code/Model</span>
+                                            <span>LISAt's Code/Model GH</span>
                                         </a>
                                     </span>
+
+                                    <span class="link-block">
+                                        <a href="https://huggingface.co/jquenum/LISAt-7b" target="_blank"
+                                            class="external-link button is-normal is-rounded is-dark">
+                                            <span class="icon">
+                                                <i class="fa-brands fa-github"></i>
+                                            </span>
+                                            <span>LISAt's Code/Model HF</span>
+                                        </a>
+                                    </span>
+
+
                                 </div>
                             </div>
                         </div>
@@ -165,13 +188,14 @@
 <!--                     <h2 class="title is-4">Video Introduction</h2>
                     <div class="content has-text-justified">
                         <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/PZ7H9vNZZag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="#" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div> -->
-                    <h2 class="title is-4">Abstract</h2>
+                    <h2 class="title is-4">Why LISAt?</h2>
                     <div class="content has-text-justified">
                         <p>
-                        Large Multimodal Models (LMMs) have made significant strides in visual question-answering for single images. Recent advancements like long-context LMMs have allowed them to ingest larger, or even multiple, images. <b>However, the ability to process a large number of visual tokens does not guarantee effective retrieval and reasoning for multi-image question answering (MIQA)</b>, especially in real-world applications like photo album searches or satellite imagery analysis. In this work, we first assess the limitations of current benchmarks for long-context LMMs. We address these limitations by introducing a new vision-centric, long-context benchmark, "Visual Haystacks (VHs)". We comprehensively evaluate both open-source and proprietary models on VHs, and demonstrate that these models struggle when reasoning across potentially unrelated images, perform poorly on cross-image reasoning, as well as exhibit biases based on the placement of key information within the context window. Towards a solution, we introduce MIRAGE (Multi-Image Retrieval Augmented Generation), an open-source, lightweight visual-RAG framework that processes up to 10k images on a single 40G A100 GPU -- far surpassing the 1k-image limit of contemporary models. MIRAGE demonstrates up to 13% performance improvement over existing open-source LMMs on VHs, sets a new state-of-the-art on the RetVQA multi-image QA benchmark, and achieves competitive performance on single-image QA with state-of-the-art LMMs.
+                        Segmentation models can recognize a pre-defined set of objects in images. However, segmentation models that can “reason” over complex user queries that implicitly refer to multiple objects of interest are still in their infancy. Recent advances in “reasoning segmentation”—generating segmentation masks from complex, implicit query text—show that vision-language models can reason across an open domain of objects and produce reasonable segmentation outputs. However, our experiments show that such models struggle when operating on complicated remote-sensing images. 
+                        <!-- In this work, we introduce LISAT, a vision-language model (VLM) designed to describe complex remote-sensing images, answer questions about those images, and also identify and segment objects within the scenes. We trained LISAT on a new curated geospatial reasoning-segmentation dataset, GRES, comprising 27,615 annotations across 9,205 images, and a multi-modal geospatial pre-training dataset, PreGRES, containing >1M QA pairs. LISAT outperforms existing geospatial foundation models such as RS-GPT4V by over 10.04% (BLEU-4) on remote-sensing visual description tasks and outperforms state-of-the-art open-domain models on remote-sensing reasoning segmentation tasks by 143.36% (gIoU). Our model, datasets, and code are available at <https://lisat.github.io>. -->
                         </p>
                     </div>
 
@@ -183,32 +207,71 @@
 
 
 
+    <section class="section hero ">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+
+                    <!-- YouTube Video Link -->
+<!--                     <h2 class="title is-4">Video Introduction</h2>
+                    <div class="content has-text-justified">
+                        <div class="video-wrapper">
+                            <iframe src="#" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div> -->
+                    <h2 class="title is-4">Our Solution</h2>
+                    <div class="content has-text-justified">
+                        <p>
+
+                        <!-- Segmentation models can recognize a pre-defined set of objects in images. However, segmentation models that can “reason” over complex user queries that implicitly refer to multiple objects of interest are still in their infancy. Recent advances in “reasoning segmentation”—generating segmentation masks from complex, implicit query text—show that vision-language models can reason across an open domain of objects and produce reasonable segmentation outputs. However, our experiments show that such models struggle when operating on complicated remote-sensing images. -->
+                        In this work, we introduce LISAT, a vision-language model (VLM) designed to describe complex remote-sensing images, answer questions about those images, and also identify and segment objects within the scenes. We trained LISAT on a new curated geospatial reasoning-segmentation dataset, GRES, comprising 27,615 annotations across 9,205 images, and a multi-modal geospatial pre-training dataset, PreGRES, containing >1M QA pairs. LISAT outperforms existing geospatial foundation models such as RS-GPT4V by over 10.04% (BLEU-4) on remote-sensing visual description tasks and outperforms state-of-the-art open-domain models on remote-sensing reasoning segmentation tasks by 143.36% (gIoU). Our model, datasets, and code are available at <https://lisat.github.io>.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>    
+
+
     <!-- SESAME -->
     <section class="section ">
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-full">
-                    <h2 class="title is-4">Visual Haystacks (VHs): A Vision-centric Needle-In-A-Haystack Benchmark</h2>
+                    <h2 class="title is-4">How was GRES constructed?</h2>
                 </div>
             </div>
             <!-- <div id="results-carousel" class="carousel results-carousel"> -->
                 <div class="content has-text-justified">
-                    <p>Visual Haystacks (VHs) is a "vision-centric" Needle-In-A-Haystack (NIAH) benchmark specifically designed to evaluate the capabilities of Large Multimodal Models (LMMs) in visual retrieval and reasoning over sets of unrelated images. Unlike conventional NIAH challenges that center on artificial, text-related retrieval and understanding with limited anecdotal examples, VHs contains a much larger number of examples and focuses on "simple visual tasks", providing a more accurate reflection of LMMs' capabilities when dealing with extensive visual context. 
-                    </p>
+
+                    <p>To generate synthetic data, we use the pipeline depicted below. We start with a seed detection dataset (xView). We then filter detections for those that are both
+                        visually interesting and highly distinguishable (A). For those detection, we then generate a natural language description (B), and a
+                        pixel-wise segmentation mask (C). Finally, the natural language description is used to generate a localization query (D). Together, the
+                        segmentation mask and the query form a ground-truth pair for the LISAT reasoning segmentation fine-tuning.</p>
+
+                    <!-- <p>GRES is a semi-synthetic dataset designed explicitly for geospatial reasoning segmentation. Each sample in GRES consists of an image, a natural language query referring to a single object in that image, and a pixel-level segmentation mask (See Figure 1 for an example of a GRES query/image pair). This task allows us to train the LISAT model to correctly localize images at a pixel level within the scene, even in the case of multiple objects requiring disambiguation. To build the dataset, we begin with a subset of the xView dataset (Lam et al., 2018) consisting of 26, 541 high-resolution satellite images spanning approximately 1,400 square kilometers, covering more than 60 classes. xView consists of paired images and object detections within the images in bounding box form. To convert xView images/annotations to GRES annotations/images, we follow the process overviewed in Figure 1.</p> 
+
+                    <p>In the first part of the pipeline, we need to generate a “disambiguating query” that selects for a single object within the scene from the large set of objects. To do so, we first filter the scenes for two key objectives: (1) uniqueness (i.e. can objects be easily disambiguated with a natural language query), and (2) interest (i.e. are the objects visually interesting) (Figure 1, A). An object is considered “unique” in an image if it is one of less than 2 detections of its class in its respective quadrant, and an object is considered “visually interesting” if it belongs to a class appearing in less than 50% of the overall subset of xView detections. Comprehensive statistics of object categories after filtering are available in Table B.8.</p>
+
+                    <p>After the filtering stage, we convert the object detection to a query using a set of structured queries to a large vision and language model trained on natural images (in our case, GPT-4v (Achiam et al., 2023), Figure 1, B). In the first prompting stage, we ask the VLM to identify unique characteristics of the class within the bounding box by asking the model to ‘‘Find visual features (color, shape, size, etc.) that to help find or segment {class name} in the image.’’. We then ask the VLM to come up with a sentence describing the object in the bounding box within the scene using the collected unique characteristics (See the full prompt in Appendix B.1.1). Given these features, we prompt the VLM again with the full image, along with other detections in the image and the position of the bounding box to produce a query(see the full prompt in Appendix B.1.2, Figure 1, D).</p>
+
+                    <p>In the second part of the pipeline (Figure 1, C), we need to generate the pixel-based mask from the bounding box. To do this, we leverage a GeoSAM model (Sultana et al., 2023) with a custom high-resolution inference configuration (128 points per side, 0.95 prediction IoU threshold, and 0.95 stability score with an 80-pixel minimum mask region area) to produce a part-wise segmentation of each bounding box. We then add any sub-parts that cover more than 80px of the underlying bounding box to the final pixel mask.</p>
+
+                    <p>We then asked the VLM to rephrase each query two separate ways which added to the initially generated query gives us 3 queries per image. This pipeline overall results in a dataset consisting of 9,205 images and 27,615 natural language queries/answers within those images. From this dataset, we generate train, test, and validation splits consisting of 7,205, 1,500, and 500 images respectively.<p> -->
+
                 </div>
-                <div class="item is-vcentered">
-                    <img src="static/images/figures/fig1.png" alt="VHs dataset overview" />
+
+                <div class="item is-vcentered" style="display: flex; justify-content: center; align-items: center; min-height: 8vh; padding: 1px 0;">
+                    <img src="static/images/figures/fig1.png" alt="GRES dataset overview" width="70%" />
                 </div>
+                
+
                 <br>
                 <div class="content has-text-justified">
                     <p>
-                        The dataset is derived from the in-domain COCO dataset and includes straightforward questions, focusing exclusively on long-context visual retrieval and reasoning capabilities. It features two types of challenges: the Single-Needle Challenge and the Multi-Needle Challenge. For more information, please visit our <a href="https://github.com/visual-haystacks/vhs_benchmark">GitHub repository</a>.
-                    <ol>
-                        <li><b>Single-Needle Challenge</b>: Only a single needle image exists in the haystack of images. The question is framed as, "For the image with the anchor object, is there a target object?"
-                        </li>
-                        <li><b>Multi-Needle Challenge</b>: Two or three needle images exist in the haystack of images. The question is framed as either, "For all images with the anchor object, do all of them contain the target object?" or "For all images with the anchor object, do any of them contain the target object?"
-                        </li>
-                    </ol>
+                        For more information, please visit our <a href="#">GitHub repository</a>.
+
                     </p>
                 </div>
             <!-- </div> -->
@@ -219,44 +282,64 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-full">
-                    <h2 class="title is-4">Comprehensive Analyses/Interesting Findings</h2>
+                    <h2 class="title is-4">What are Some Quantitative Results of LISAt<sub>PRE</sub> and LISAT?</h2>
+
+                <!-- <div class="content has-text-justified"></div>
+                    <p>We discuss some of our interesting findings below:</p>
+                </div> -->
+
                     <div class="content has-text-justified">
                         <ul>
                             <li>
-                                <b>Context Limitations</b>: Current LMMs cannot process more than 100 images due to API rejections (payload exceeding limits), context length overflows, or memory constraints on 4 A100 GPUs.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content has-text-justified">
-                        <ul>
-                            <li>
-                                <b>Susceptibility to Visual Distractors</b>: While LMMs can perform nearly as well as specialized detectors on single-image tasks, their effectiveness decreases significantly as the number of images increases.
+                                <b>The choice of Vision Encoder and LLM matters for the MLLM (LISAt<sub>PRE</sub>)</b>: The table below shows that models using LLama 2 as a base LLM are notably worse than Vicuna. It also shows that RemoteCLIP
+                                (which we use in LISAT) significantly outperforms both Geo-CLIP and Sat-CLIP on all domains, while slightly outperforming the base CLIP models.
                             </li>
                         </ul>
                     </div>
                     <div class="item is-vcentered">
-                        <img src="static/images/figures/fig2.png" alt="Effectiveness of LMMs with increasing number of images" width="90%">
+                        <img src="static/images/vis_llm.png" alt="Effectiveness of the choice on Vision Encoder/ LMMs combinaison" width="50%">
                     </div>
 
                     <div class="content has-text-justified">
                         <ul>
                             <li>
-                                <b>Challenges in Cross-Image Reasoning</b>: LMMs experience substantial performance declines when required to integrate information across multiple key images; reintroducing noisy images exacerbates this decline even further.
+                                <b>LISAt<sub>PRE</sub> is competitive compare with existing methods</b>: A comparison of captioning performance on the datasets such as the UCM-
+                                Captions dataset are reported for BLEU-4 and CIDEr metrics is shown in the table below.
                             </li>
                         </ul>
                     </div>
                     <div class="item is-vcentered">
-                        <img src="static/images/figures/fig3.png" alt="Challenges in Cross-Image Reasoning" width="90%">
+                        <img src="static/images/lisat_pre_compet.png" alt="LISAt_PRE (MLLM) is competitive" width="50%">
                     </div>
+
+
                     <div class="content has-text-justified">
                         <ul>
                             <li>
-                                <b>Positional Biases</b>: LMMs exhibit various positional biases—information placed at different positions within the context window yields different results. For instance, GPT-4 exhibits a <a href="https://arxiv.org/abs/2307.03172">"lost-in-the-middle"</a> phenomenon in the visual domain, Gemini 1.5 Pro shows a preference for images at the beginning, and open-source models often favor the last image when given a small set.
+                                <b>LISAt outperforms existing methods</b>: A comparative performance of LISAT against LISA-7B-
+                                v1 and LISA-13B-Llama2-v1 on GRES across different object sizes are reported in the table below where LISAT-7B consistently outperforms the baseline models,
+                                particularly in the Small object category.
                             </li>
                         </ul>
                     </div>
                     <div class="item is-vcentered">
-                        <img src="static/images/figures/fig4.png" alt="Positional Biases in LMMs" width="92%">
+                        <img src="static/images/lisat_comp.png" alt="LISAt is competitive" width="50%">
+                    </div>
+
+                    <div class="content has-text-justified">
+                        <ul>
+                            <li>
+                                <b>LISAt is scalable</b>: While
+                                adding additional data is helpful, even with 7K training images
+                                (the full GRES dataset), we observe the beginning of a plateau
+                                in performance, particularly on cIOU scores. This suggests that
+                                more data alone may not be helpful, and instead, we may need
+                                additional data variance outside the xView classes.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item is-vcentered">
+                        <img src="static/images/LISAt_Scaling_v2.png" alt="LISAT scaling Behavior" width="60%">
                     </div>
                 </div>
             </div>
@@ -268,43 +351,35 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-full">
-                    <h2 class="title is-4">Our Solution: MIRAGE - Multi-Image Retrieval Augmented Generation</h2>
-                    <div class="content has-text-justified">
-                        <p>Through extensive experiments above, we demonstrated that existing LMMs struggle with inputs exceeding 100 images due to API limitations, context overflow, or hardware constraints on 4 A100 GPUs. Also, these models often face issues such as visual distractions, cross-image reasoning difficulties, and positional biases. To overcome these challenges, we developed MIRAGE (8.3B), a pioneering, open-source <b>visual-RAG baseline model based on LMMs capable of handling tens of thousands of images</b>.
-                        </p>
-                        <ul>
-                            <li><b>Model Architecture</b>: MIRAGE handles questions and images through several steps: encoding features with CLIP, compressing image features with our Q-Former, calculating relevance scores with a retriever, and feeding only relevant images to the LLM. During instruction finetuning, the model is supervised for the next token prediction and the relevance prediction task, utilizing Binary Cross Entropy loss between the ground truth {0, 1} and the predicted number.
-                            </li>
-                            <br>
-                            <li><b>Multi-Image Instruction Tuning Dataset</b>: We construct an open-source multi-image instruction tuning dataset. We augment existing single-image LLaVA instruction tuning data into a multi-image fashion. Additionally, we include a mix of data from other multi-image sources including RetVQA, SlideVQA, and WebQA. 
-                            </li>
-                        </ul>
-                    </div>
+                    <h2 class="title is-4">What are Some Qualitative Results of LISAt?</h2>
 
-                    <div class="item is-vcentered">
-                        <img src="static/images/figures/MIRAGE.png" alt="MY ALT TEXT" width="90%" />
+                    <div id="results-carousel" class="carousel results-carousel-large">
+                        <div class="item">
+                            <img src="static/images/suc1.png" alt="Example 1" class="carousel-image" />
+                        </div>
+                        <div class="item">
+                            <img src="static/images/suc2.png" alt="Example 2" class="carousel-image" />
+                        </div>
+                        <div class="item">
+                            <img src="static/images/suc3.png" alt="Example 3" class="carousel-image" />
+                        </div>
+                        <div class="item">
+                            <img src="static/images/suc4.png" alt="Example 4" class="carousel-image" />
+                        </div>
+                        <div class="item">
+                            <img src="static/images/suc5.png" alt="Example 5" class="carousel-image" />
+                        </div>
                     </div>
-                    <div class="content has-text-justified">
-                        <ul>
-                            <li>
-                                <b>Exceptional VHs Performance</b>: Our MIRAGE model stands out in the VHs challenges. It is the only solution capable of scaling to 10,000 input images, demonstrating up to a 13% performance improvement over existing open-source alternatives and leading in most cases. Additionally, it surpasses GPT-4 and Gemini 1.5 Pro in the single-needle challenge with more than 50 images. However, its suboptimal performance in the multi-needle challenge highlights significant areas for improvement.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="item is-vcentered">
-                        <img src="static/images/figures/result_vhs.png" alt="MY ALT TEXT" width="90%" />
-                    </div>
+                    
 
-                    <div class="content has-text-justified">
-                        <ul>
-                            <li>
-                                <b>Reasonable VQA Performance</b>: The MIRAGE model excels in the multi-image VQA task, significantly outperforming competitors like GPT-4o, Gemini-v1.5, and the Large World Model (LWM). MIRAGE also maintains solid performance on single-image tasks, showcasing its versatile reasoning capabilities.
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="item is-vcentered">
-                        <img src="static/images/figures/result_vqa.png" alt="MY ALT TEXT" width="80%" />
-                    </div>
+                    <!-- <div class="item is-vcentered">
+                        <img src="static/images/suc1.png" alt="MY ALT TEXT" width="100%" />
+                    </div> -->
+
+                    <!-- <div class="item is-vcentered">
+                        <img src="static/images/suc2.png" alt="MY ALT TEXT" width="100%" />
+                    </div> -->
+                    
                 </div>
             </div>
         </div>
@@ -331,12 +406,12 @@
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
-            <pre><code>@article{wu2024visual,
-  title={Visual Haystacks: A Vision-Centric Needle-In-A-Haystack Benchmark},
-  author={Wu, Tsung-Han and Biamby, Giscard and and Quenum, Jerome and Gupta, Ritwik and Gonzalez, Joseph E and Darrell, Trevor and Chan, David M},
-  journal={International Conference on Learning Representations},
+            <pre><code>@article{TBD,
+  title={LISAt: Language-Instructed Segmentation Assistant for Satellite Imagery},
+  author={Quenum, Jerome and Hsieh, Wen-Han and Wu, Tsung-Han and Gupta, Ritwik and Darrell, Trevor and Chan, David M},
+  journal={TBD},
   year={2025},
-  url={https://arxiv.org/abs/2407.13766}
+  url={TBD}
 }</code></pre>
         </div>
     </section>

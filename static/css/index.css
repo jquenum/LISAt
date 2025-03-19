@@ -110,16 +110,96 @@ body {
 .publication-body img {
 }
 
-.results-carousel {
+/* Small Carousel */
+.results-carousel-large {
   overflow: hidden;
 }
 
-.results-carousel .item {
+.results-carousel-large {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.results-carousel-large .item {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.results-carousel-large .item img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensures the image fills the screen without leaving gaps */
+  display: block;
+}
+
+
+
+
+
+
+
+/* Small Carousel */
+
+/* .results-carousel .item {
   margin: 5px;
   overflow: hidden;
   padding: 20px;
   font-size: 0;
+} */
+
+/* .results-carousel-small .fa-arrow-left, 
+.results-carousel-small .prev-icon, 
+.results-carousel-small .slick-prev {
+    display: none !important;
+} */
+
+.results-carousel-small button,
+.results-carousel-small [class*="prev"],
+.results-carousel-small [class*="arrow"],
+.results-carousel-small [class*="control"] {
+    display: none !important;
 }
+
+.results-carousel-small {
+  width: 80vw; /* Adjust width for smaller carousel */
+  height: 30vh; /* Adjust height for smaller carousel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto; /* Center the smaller carousel */
+  left: -5vw; /* Shift the carousel left */
+}
+
+.results-carousel-small .item {
+  width: 50vw; /* Smaller item width */
+  height: 50vh; /* Smaller item height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px; /* Spacing between items */
+}
+
+.results-carousel-small .item img {
+  width: 100%; /* Fit within item */
+  height: 100%;
+  object-fit: contain; /* Keeps the entire image visible */
+  display: block;
+  border-radius: 10px; /* Optional: add rounded corners */
+}
+
+/* Fade Effect */
+
+
 
 .results-carousel video {
   margin: 0;
