@@ -1,4 +1,4 @@
-# Visual Haystacks: Answering Harder Questions About Sets of Images
+# LISAt: Language-Instructed Segmentation Assistant for Satellite Imagery
 
 This is an academic paper project page template.
 
